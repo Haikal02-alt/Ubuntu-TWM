@@ -1,0 +1,34 @@
+1 Download Ubuntu Server Using https://ubuntu.com/download/server
+2 Download Ubuntu Server Iso
+3 Flash Usb To Etcher Ventoy Or Rufus
+4 Setup Ubuntu Server
+  If You See Choose The type of installation
+  Choose Ubuntu Server (minimized) Because 
+  Ubuntu Server Minimized is highly lightweight, specifically designed to be roughly 50% smaller in disk size than the standard server image and offers faster boot times.
+  It removes unnecessary packages, reduces the security attack surface, and provides a bare-bones base ideal for cloud deployments
+5 You May Stop The Services Of Snap
+  sudo systemctl stop snapd
+  sudo systemctl disable snapd
+
+6 Purge Snapd (Recommended For Older Hardware Or Any Slow Hardware)
+  sudo apt purge snapd
+
+7 Clean Up Leftover Directories
+  rm -rf ~/snap
+  sudo rm -rf /var/snap /var/lib/snapd /var/cache/snapd
+
+8 Reboot
+  sudo reboot
+
+9 System Updates: Ubuntu may reinstall Snapd during major upgrades. To prevent this, you can block Snapd from being reinstalled:
+  sudo apt-mark hold snapd
+
+10 sudo apt update
+   sudo apt install twm ubuntu-wallpapers -y
+
+11 sudo apt install lightdm lightdm-gtk-greeter
+
+12 sudo systemctl enable lightdm
+   sudo systemctl start lightdm
+
+13 Have Fun And Start Using It
